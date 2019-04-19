@@ -1,0 +1,59 @@
+<div class="container sheet padding-20mm" style="
+  margin: 0;
+  box-sizing: border-box;
+  width: 210mm;
+  height: 296mm;
+  padding: 0mm;
+  margin-top: 0em;
+  margin-left: 2em;
+  font-family: arial,helvetica, sans-serif;
+  font-size: 12pt;
+  ">
+  <div class="content" style="margin: 0; padding: 0;">
+
+    <!-- Bloc patient -->
+    <div class="patient">
+      <span class="bloctitle"
+        style="font-weight: bold; font-size:1.2em; color:#aaa;float:left; width:350px;text-align:right;"> Données
+        d’identification du
+        patient :</span>
+      <div class="bloccontent"
+        style="margin-left:360px; border-left:1px solid #bbb; padding-left:10px;font-size:1.3em;">
+        <span class="mceNonEditable" th:utext="${patient.firstName}">patient.firstName</span>&nbsp;
+        <span class="mceNonEditable" th:utext="${patient.lastName}">patient.lastName</span><br>
+        <span class="mceNonEditable" th:utext="${patient.adresse}">patient.adresse</span>&nbsp;
+        <span class="mceNonEditable" th:utext="${patient.houseNumber}">patient.houseNumber</span>
+        <br />
+        <span class="mceNonEditable" th:utext="${patient.townCode}">patient.townCode</span>&nbsp;
+        <span class="mceNonEditable" th:utext="${patient.town}">patient.town</span><br>
+        né le
+        <span class="mceNonEditable" th:utext="${patient.dateOfBirth}">patient.dateOfBirth</span> &agrave;&nbsp;
+        <span class="mceNonEditable" th:utext="${patient.placeOfBirth}">patient.placeOfBirth</span>
+        <br />
+
+        <div class="comm smallletters" style="font-size: 0.8em;">
+          &#9743;&nbsp;:&nbsp;<span class="mceNonEditable" th:utext="${patient.tel}">patient.tel</span>&nbsp;-
+          &#9990;&nbsp;:&nbsp;<span class="mceNonEditable" th:utext="${patient.gsm}">patient.gsm</span>&nbsp;-
+          &#64;&nbsp;:&nbsp;<span class="mceNonEditable" th:utext="${patient.mail}">patient.mail</span>&nbsp;
+
+        </div>
+
+        <div class="smallletters" style="font-size: 0.8em;">
+          Mutuelle:&nbsp;
+          <em style="font-weight:bold">
+            <span class="mceNonEditable" th:utext="${patient.mutualityNum}">patient.mutualityNum</span>&nbsp;
+          </em>
+          - &nbsp;Code titulaire:&nbsp;
+          <em style="font-weight:bold">
+            <span class="mceNonEditable" th:utext="${patient.titularCode1}">patient.titularCode1</span>&nbsp;
+          </em>
+          - &nbsp;NISS:&nbsp;
+          <em style="font-weight:bold">
+            <span class="mceNonEditable" th:utext="${patient.ssin}">patient.ssin</span>
+          </em>
+        </div>
+      </div>
+    </div>
+    <!-- Fin Bloc patient -->
+  </div>
+</div>

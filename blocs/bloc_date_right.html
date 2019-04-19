@@ -1,0 +1,28 @@
+<div class="container sheet padding-20mm" style="
+  margin: 0;
+  box-sizing: border-box;
+  width: 210mm;
+  height: 296mm;
+  padding: 0mm;
+  margin-top: 0em;
+  margin-left: 2em;
+  font-family: arial,helvetica, sans-serif;
+  font-size: 12pt;
+  ">
+  <div class="content" style="margin: 0; padding: 0;">
+
+    <!-- bloc date -->
+    <span class="bloctitle"
+      style="font-weight: bold; font-size:1.2em; color:#aaa;float:left; width:350px;text-align:right;"> Date du
+      contact</span>
+    <div class="bloccontent" style="margin-left:360px; border-left:1px solid #bbb; padding-left:10px;font-size:1.3em;">
+
+      <div><span class="mceNonEditable" th:utext="${doctor.town}">doctor.town</span>
+        le <span class="mceNonEditable" th:utext="${info.date}">info.date</span>
+
+      </div>
+    </div>
+    <!-- Fin bloc date -->
+
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="container sheet padding-20mm" style="
+  margin: 0;
+  box-sizing: border-box;
+  width: 210mm;
+  height: 296mm;
+  padding: 0mm;
+  margin-top: 0em;
+  margin-left: 2em;
+  font-family: arial,helvetica, sans-serif;
+  font-size: 12pt;
+  ">
+  <div class="content" style="margin: 0; padding: 0;">
+
+
+    <!-- Bloc doctor -->
+    <div class="doctorstyle">
+      <span class="bloctitle"
+        style="font-weight: bold; font-size:1.2em; color:#aaa;float:left; width:350px;text-align:right;"> Consultation
+        du Dr</span>
+
+      <div class="bloccontent"
+        style="margin-left:360px; border-left:1px solid #bbb; padding-left:10px; font-size:1.3em; color:mediumseagreen;">
+        <div class="coord" style="font-weight: bold;">
+          <span class="mceNonEditable" th:text="${doctor.lastName}">doctor.lastName</span>
+          <span class="mceNonEditable" th:text="${doctor.firstName}">doctor.firstName</span>
+        </div>
+        <div class="coord"><span class="mceNonEditable" th:text="${doctor.adresse}">doctor.adresse</span>
+          <span class="mceNonEditable" th:utext="${doctor.houseNumber}">doctor.houseNumber</span></div>
+        <div class="coord"><span class="mceNonEditable" th:text="${doctor.townCode}">doctor.townCode</span>
+          <span class="mceNonEditable" th:text="${doctor.town}">doctor.town</span></div>
+        <div class="small" style="font-size: 0.6em;">
+          <div>Tel : <span class="mceNonEditable" th:text="${doctor.tel}">doctor.tel</span></div>
+          <div>INAMI : <span class="mceNonEditable" th:text="${doctor.inami}">doctor.inami</span></div>
+          <div>EMAIL : <span class="mceNonEditable" th:text="${doctor.mail}">doctor.mail</span></div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin Bloc doctor -->
+
+  </div>
+</div>
