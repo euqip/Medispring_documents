@@ -2,7 +2,8 @@
 
 Des documents types pour le DMI Medispring
 
-Ce répertoire contient des canevas de documents utilisables dans le logiciel médical (DMI) MEDISPRING
+Ce répertoire contient des canevas de documents utilisables dans le logiciel médical (DMI) MEDISPRING.
+L'utilisation de ce type de document pour le patient, par rapport à l'impression d'un PDF d'une autre source, se trouve dans l'enregistremant au sein de la consultation.  Une feuille de régime, des conseils de santé, ...  Lors de la prochaine visite, pas besoin de chercher, les traces sont enregistrées, au même titre qu'un avis confrère ou un ITT.
 
 ## Quels Documents Types
 
@@ -35,7 +36,7 @@ Les documents types sont personnels, ils ne seront disponibles que dans la sessi
 Remarque:
 Les documents types sont triés par ordre alphabétiques, mais en séparant les majuscules des minuscules.  Techniquement, il ne s'agit pas d'un tri alphbétique mais d'un tri ASCII.
 
-## tester les documents types
+## Tester les documents types
 
 Créer une consultation ou en modifier une récente.
 Sous le P de SOAP, ajouter le document fraîchement créé
