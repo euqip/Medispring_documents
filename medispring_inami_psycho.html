@@ -1,0 +1,163 @@
+<!-- gerer la taille de la police depuis la div .container le reste suivra! -->
+<!-- B Pique 2019-03-30, suivant modele INAMI -->
+<div class="container sheet padding-20mm" style="
+  font-family: arial,helvetica, sans-serif;
+  font-size: 7pt;
+  ">
+  <div class="content" style="margin: 0; padding: 0;">
+
+    <div style="text-align:center; font-size:1.5em; font-weight:bold;">
+      Prescription de renvoi pour des séances de psychologie de première ligne chez un psychologue clinicien ou un
+      orthopédagogue clinicien
+      <sup
+        title="Plus d’infos sur le remboursement des séances de psychologie de première ligne sur www.inami.be. Le nombre de séances psychologiques remboursables par les organismes assureurs par année civile est limité, aussi bien en total que par patient. La liste des psychologues cliniciens ou orthopédagogues cliniciens qui peuvent réaliser ces séances se trouve sur www.xxx.be.">1</sup>
+    </div>
+    <br>
+
+    <!-- Table -->
+    <table class="table" style="border-spacing: 0px; border: 1px solid #555555;">
+      <tbody>
+        <tr>
+          <td style="border: 1px solid #555555; padding:1em;">
+            <!-- Bloc patient -->
+            <div class="patient">
+              <span class="bloctitle" style="text-decoration: underline;"> Données d’identification du patient</span>
+              <br />
+              <br />
+              <div class="bloccontent" style="padding-left:3em;">
+                <span class="mceNonEditable" th:utext="${patient.firstName}">patient.firstName</span> &nbsp;
+                <span class="mceNonEditable" th:utext="${patient.lastName}">patient.lastName</span>
+                né le
+                <span class="mceNonEditable" th:utext="${patient.dateOfBirth}">patient.dateOfBirth</span> &agrave;&nbsp;
+                <span class="mceNonEditable" th:utext="${patient.placeOfBirth}">patient.placeOfBirth</span>
+                <br />
+                <span class="mceNonEditable" th:utext="${patient.adresse}">patient.adresse</span>&nbsp;
+                <span class="mceNonEditable" th:utext="${patient.houseNumber}">patient.houseNumber</span>
+                <br />
+                <span class="mceNonEditable" th:utext="${patient.townCode}">patient.townCode</span>&nbsp;
+                <span class="mceNonEditable" th:utext="${patient.town}">patient.town</span>
+
+                <div class="comm smallletters" style="font-size: 0.8em;">
+                  &#9742;&nbsp;:&nbsp;<span class="mceNonEditable" th:utext="${patient.tel}">patient.tel</span>&nbsp;-
+                  &#9990;&nbsp;:&nbsp;<span class="mceNonEditable" th:utext="${patient.gsm}">patient.gsm</span>&nbsp;-
+                  &#64;&nbsp;:&nbsp;<span class="mceNonEditable" th:utext="${patient.mail}">patient.mail</span>&nbsp;
+
+                </div>
+
+                <div class="smallletters" style="font-size: 0.8em;">
+                  Mutuelle:&nbsp;
+                  <em style="font-weight:bold">
+                    <span class="mceNonEditable" th:utext="${patient.mutualityNum}">patient.mutualityNum</span>&nbsp;
+                  </em>
+                  - &nbsp;Code titulaire:&nbsp;
+                  <em style="font-weight:bold">
+                    <span class="mceNonEditable" th:utext="${patient.titularCode1}">patient.titularCode1</span>&nbsp;
+                  </em>
+                  - &nbsp;NISS:&nbsp;
+                  <em style="font-weight:bold">
+                    <span class="mceNonEditable" th:utext="${patient.ssin}">patient.ssin</span>
+                  </em>
+                </div>
+              </div>
+              <br />
+              Le patient
+              <span class="biffer" title="Biffer les mentions inutiles">
+                a/n’a pas
+              </span>
+              <sup>2</sup> droit à l’intervention majorée<sup
+                title="Intervention majorée visée à l'article 37, §§ 1er et 19 de la loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994">3</sup>.
+            </div>
+            <!-- Fin Bloc patient -->
+          </td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #555555; padding:1em;">
+            <u>
+              Indication pour les séances de psychologie de première ligne
+            </u>
+            <br>
+            <span class="note4" title="Indiquer le problème essentiel. Une seule option ne peut être indiquée">
+              Le patient souffre d’un problème psychique modérément sévère qui est<sup>4</sup>:<br /><br />
+            </span>
+
+            <div class="liste" style="padding-left:50px; line-height:2em;"
+              title="Indiquer le problème essentiel. Une seule option ne peut être indiquée">
+              <div>
+                principalement un problème anxieux
+              </div>
+              <div>
+                principalement un problème dépressif
+              </div>
+              <div>
+                principalement un problème de consommation d’alcool
+              </div>
+            </div>
+            <br />
+            Le problème peut probablement être suffisamment traité au moyen d’un nombre limité de séances de
+            psychologie.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="space" style="display:block; height:8em; width:100%;">
+    <!-- un espace sur la feuille-->
+  </div>
+
+
+  <!-- Bloc doctor -->
+  <div class="doctorstyle">
+    <div class="right" style="text-align: right;font-size:1.2em;"><span class="mceNonEditable"
+        th:utext="${doctor.town}">doctor.town</span>
+      le <span class="mceNonEditable" th:utext="${info.date}">info.date</span>
+    </div>
+    <div class="left" style="text-align: right;font-size:1.2em">
+      <div class="coord" style="font-weight: bold;">Dr <span class="mceNonEditable"
+          th:text="${doctor.lastName}">doctor.lastName</span> <span class="mceNonEditable"
+          th:text="${doctor.firstName}">doctor.firstName</span></div>
+      <div class="coord"><span class="mceNonEditable" th:text="${doctor.adresse}">doctor.adresse</span> <span
+          class="mceNonEditable" th:utext="${doctor.houseNumber}">doctor.houseNumber</span></div>
+      <div class="coord"><span class="mceNonEditable" th:text="${doctor.townCode}">doctor.townCode</span> <span
+          class="mceNonEditable" th:text="${doctor.town}">doctor.town</span></div>
+      <div class="small" style="font-size: 0.8em;">
+        <div>Tel : <span class="mceNonEditable" th:text="${doctor.tel}">doctor.tel</span></div>
+        <div>INAMI : <span class="mceNonEditable" th:text="${doctor.inami}">doctor.inami</span></div>
+        <div>EMAIL : <span class="mceNonEditable" th:text="${doctor.mail}">doctor.mail</span></div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin Bloc doctor -->
+  <div class="space" style="display:block; height:20em; width:100%;">
+    <!-- un espace sur la feuille-->
+  </div>
+  <div class="footer" style="font-size:0.8em;position:absolute; margin-bottom:0px;">
+    <br />
+    <sup>1</sup>
+    <div class="notebp" style="padding-left:1em; display:inline-block;">
+      Plus d’infos sur le remboursement des séances de psychologie de première ligne sur
+      <a href="http://www.inami.be" target="blank">www.inami.be</a>.
+      Le nombre de séances psychologiques remboursables par les organismes assureurs par année civile est limité, aussi
+      bien en total que par patient. La liste des psychologues cliniciens ou orthopédagogues cliniciens qui peuvent
+      réaliser ces séances se trouve sur www.xxx.be.
+    </div>
+    <br />
+    <sup>2</sup>
+    <div class="notebp" style="padding-left:1em; display:inline-block;">
+      Biffer les mentions inutiles
+    </div>
+    <br />
+    <sup>3</sup>
+    <div class="notebp" style="padding-left:1em; display:inline-block;">
+      Intervention majorée visée à l'article 37, §§ 1er et 19 de la loi relative à l'assurance obligatoire soins de
+      santé et indemnités, coordonnée le 14 juillet 1994
+    </div>
+    <br />
+    <sup>4</sup>
+    <div class="notebp" style="padding-left:1em; display:inline-block;">
+      Indiquer le problème essentiel. Une seule option ne peut être indiquée.
+    </div>
+    <br />
+  </div>
+</div>
