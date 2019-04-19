@@ -2,7 +2,7 @@
 
 Des documents types pour le DMI Medispring
 
-Ce répertoire contient des canevas de rapprts utilisables dans le logiciel médical (DMI) MEDISPRING
+Ce répertoire contient des canevas de documents utilisables dans le logiciel médical (DMI) MEDISPRING
 
 ## Quels Documents Types
 
