@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Courrier de rappel DMG</title>
+</head>
+
+<body>
+  <div class="container sheet padding-20mm" style="
+      font-family: arial,helvetica, sans-serif;
+      font-size: 7pt;
+      ">
+    <div class="right" style="text-align: right;">
+      <span class="mceNonEditable" th:utext="${patient.town}">patient.town</span> le
+      <span class="mceNonEditable" th:utext="${info.date}">info.date</span>
+    </div>
+
+    <p>
+      <span class="mceNonEditable" style="font-weight:bold;" th:text="${patient.lastName}">patient.lastName</span>
+      <span> </span>
+      <span class="mceNonEditable" style="font-weight:bold;" th:text="${patient.firstName}">patient.firstName</span>
+      <br>
+      <span class="mceNonEditable" th:text="${patient.adresse}">patient.adresse</span>&nbsp;
+      <span class="mceNonEditable" th:utext="${patient.houseNumber}">patient.houseNumber</span>&nbsp;&agrave;
+      <br />
+      <span class="mceNonEditable" th:text="${patient.townCode}">patient.townCode</span>&nbsp;
+      <span class="mceNonEditable" th:text="${patient.town}">patient.town</span>
+    </p>
+
+    <div class="content" style="margin: 0; padding: 0;">
+      <!--
+          Titre du document
+        -->
+      <h1
+        style="font-size: 1.5em; text-align: letf; font-weight: bold; padding-top: 2.0em; padding-bottom: 2em; padding-left: 0cm;">
+        Objet: Modification de mon Dossier Médical Global
+      </h1>
+
+      <!--
+          Fin du titre du document
+        -->
+      <div class="bodytext" style="line-height: 1.5em;">
+        <p>
+          Mesdames, Messieurs, <br>
+        </p>
+        <p>
+          <span>
+            Lors de ma dernière consultation chez le médecin généraliste que j'ai choisi pour me soigner, j'ai constaté
+            que
+            mon "Dossier Médical Global (DMG)" avait changé de titulaire sans que j'en fasse la demande. Le médecin
+            généraliste que j'ai choisi pour assurer le suivi de mon dossier est le
+          </span>
+          <span>
+            Dr
+            <span class="mceNonEditable" th:text="${doctor.lastName}">doctor.lastName</span><span> </span>
+            <span class="mceNonEditable" th:text="${doctor.firstName}">doctor.firstName</span><span> </span>
+            <span class="mceNonEditable" th:text="${doctor.adresse}">doctor.adresse</span><span> </span>
+            <span class="mceNonEditable" th:text="${doctor.houseNumber}">doctor.houseNumber</span><span> </span>
+            <span class="mceNonEditable" th:text="${doctor.townCode}">doctor.townCode</span><span> </span>
+            <span class="mceNonEditable" th:text="${doctor.town}">doctor.town</span><span> </span>
+            Tel :
+            <span class="mceNonEditable" th:text="${doctor.tel}">doctor.tel</span><span> </span>
+            INAMI :
+            <span class="mceNonEditable" th:text="${doctor.inami}">doctor.inami</span><span>.</span>
+          </span>
+          <br><br>
+          <span>
+            Voudriez-vous SVP faire le nécessaire pour que ce dossier revienne au Dr
+          </span>
+          <span class="mceNonEditable" th:text="${doctor.lastName}">doctor.lastName</span><span> </span>
+          <span class="mceNonEditable" th:text="${doctor.firstName}">doctor.firstName</span><span> </span>
+          <br><br>
+          <span>
+            Veuillez agréer Mesdames, Messieurs, mes sincères salutations.
+          </span>
+          <br><br>
+
+        </p>
+      </div>
+      <!--
+          Signature
+        -->
+      <div class="strong" style="font-weight: bold; line-height: 1.2em;">
+        <span></span>
+        <span class="mceNonEditable" th:text="${patient.lastName}">patient.lastName</span>
+
+        <span class="mceNonEditable" th:text="${patient.firstName}">patient.firstName</span>
+        <br />le
+        <span class="mceNonEditable" th:utext="${info.date}">info.date</span>
+      </div>
+      <!--
+          Fin de Signature
+        -->
+      <!-- Vignette OA -->
+      <div
+        style="text-align: left; margin-left:3cm; margin-top:3cm;height:2cm; width:8cm; border:1px; border-style: dotted;">
+        <div style="text-align:center; vertical-align: middle; font-size:3em; color:rgb(210, 210, 210);">
+          Vignette OA
+        </div>
+      </div>
+      <!-- Fin Vignette OA -->
+    </div>
+    <!--
+        le pied de page
+      -->
+    <div class="foot" style="height: 50px; margin-top: 50px; font-size: 0.4em; display:none;">
+      &copy; 2019 BPI - Rappel DMG
+    </div>
+    <!--
+        Fin du pied de page
+      -->
+  </div>
+
+</body>
+
+</html>
