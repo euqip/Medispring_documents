@@ -49,3 +49,16 @@ Pour créer facileent un numéro national, copier son propre NIS, ajouter un jou
 ## Derniers ajustements
 
 Tous les documents types peuvent être modifiés ou remplacés par la méthode décrite ci-dessus ou modifiés à l'aide de l'éditeur fourni par le logiciel.
+
+## Balises HTML non ou mal supportées par l'editeur WYSIWYG du logiciel
+
+Le DMI lorsqu'il lance l'impression d'un docuent, l'entoure probablement de règles CSS.  Ces règles sont différentes entre l'écran et le papier.  Un simple H1 peut prendre des proportions TRES imposantes.
+
+```html
+<script>
+<style>
+<head>
+<body>
+<h1>
+
+```
