@@ -1,0 +1,83 @@
+<div class="container sheet padding-20mm" style="font-family: arial,helvetica, sans-serif; font-size: 8pt;">
+<div class="content" style="margin: 0; padding: 0;">
+<div class="right" style="text-align: right;"><span class="mceNonEditable" th:utext="${doctor.town}">doctor.town</span> le <span class="mceNonEditable" th:utext="${info.date}">info.date</span></div>
+<div class="left" style="text-align: left;">
+<div class="coord" style="font-weight: bold;">Dr <span class="mceNonEditable" th:text="${doctor.lastName}">doctor.lastName</span> <span class="mceNonEditable" th:text="${doctor.firstName}">doctor.firstName</span></div>
+<div class="coord"><span class="mceNonEditable" th:text="${doctor.adresse}">doctor.adresse</span> <span class="mceNonEditable" th:utext="${doctor.houseNumber}">doctor.houseNumber</span></div>
+<div class="coord"><span class="mceNonEditable" th:text="${doctor.townCode}">doctor.townCode</span> <span class="mceNonEditable" th:text="${doctor.town}">doctor.town</span></div>
+<div class="small" style="font-size: 0.8em;">
+<div>Tel : <span class="mceNonEditable" th:text="${doctor.tel}">doctor.tel</span></div>
+<div>INAMI : <span class="mceNonEditable" th:text="${doctor.inami}">doctor.inami</span></div>
+<div>EMAIL : <span class="mceNonEditable" th:text="${doctor.mail}">doctor.mail</span></div>
+</div>
+</div>
+<!--
+      Titre du document
+    -->
+<h1 style="font-size: 2em; text-align: center; font-weight: bold; text-decoration: underline; padding-top: 0.0em; padding-bottom: 0em;">Avis confr&egrave;re</h1>
+<!--
+      Fin du titre du document
+    -->
+<div class="bodytext" style="line-height: 1.5em;"><span>Au Dr </span> <span class="mceNonEditable" th:text="${referring.lastName}">referring.lastName</span> <span> </span> <span class="mceNonEditable" th:text="${referring.firstName}">referring.firstName</span></div>
+<div class="address"><span class="mceNonEditable" th:text="${referring.adresse}">referring.adresse</span> <br /><span class="mceNonEditable" th:text="${referring.townCode}">referring.townCode</span> <span class="mceNonEditable" th:text="${referring.town}">referring.town</span></div>
+<hr /><!--
+      Introduction Patient
+    -->
+<p>Concerne : <span class="mceNonEditable" style="font-weight: bold;" th:text="${patient.lastName}">patient.lastName</span> <span> </span> <span class="mceNonEditable" style="font-weight: bold;" th:text="${patient.firstName}">patient.firstName</span> Habitant : <span class="mceNonEditable" th:text="${patient.adresse}">patient.adresse</span> <span class="mceNonEditable" th:utext="${patient.houseNumber}">patient.houseNumber</span> &agrave; <br /><span class="mceNonEditable" th:text="${patient.townCode}">patient.townCode</span> <span class="mceNonEditable" th:text="${patient.town}">patient.town</span></p>
+Date de naissance: <span class="mceNonEditable" th:text="${patient.dateOfBirth}">patient.dateOfBirth</span> NISS: <span class="mceNonEditable" style="font-weight: bold;" th:utext="${patient.ssin}">patient.ssin</span><hr /><!--
+      Fin d'introduction Patient
+    -->
+<div class="content">
+<p>Ch&egrave;re cons&oelig;ur, cher confr&egrave;re,</p>
+<p><span>Pourriez-vous examiner Mme/Mr </span> <span class="mceNonEditable" th:text="${patient.lastName}">patient.lastName</span> <span class="mceNonEditable" th:text="${patient.firstName}">patient.firstName</span> <span> n&eacute;(e) le </span> <span class="mceNonEditable" th:text="${patient.dateOfBirth}">patient.dateOfBirth</span> <span> pour la raison suivante :<br /><span class="mceNonEditable" th:utext="${soaps.motifs}">soaps.motifs</span> <br /><span class="mceNonEditable" th:utext="${soaps.subjectif}">soaps.subjectif</span> <br /><span class="mceNonEditable" th:utext="${soaps.objectif}">soaps.objectif</span> </span></p>
+<p>Veuillez trouver ci-dessous un r&eacute;sum&eacute; du dossier m&eacute;dical de mon patient :</p>
+</div>
+<!-- biometrie -->
+<div>
+<div class="biometrie"><span style="text-decoration: underline;">Mesures biom&eacute;triques de ce jour:</span><br /><span>TA : <span class="mceNonEditable" th:utext="${soaps.biometrie.sbp}">soaps.biometrie.sbp</span> / <span class="mceNonEditable" th:utext="${soaps.biometrie.dbp}">soaps.biometrie.dbp</span> </span> <br />Pouls : <span class="mceNonEditable" th:utext="${soaps.biometrie.heartrate}">soaps.biometrie.heartrate</span> /min Poids : <span class="mceNonEditable" th:utext="${soaps.biometrie.weight}">soaps.biometrie.weight</span> Kg - Taille : <span class="mceNonEditable" th:utext="${soaps.biometrie.height}">soaps.biometrie.height</span> cm</div>
+</div>
+<br /><!-- Fin biometrie -->
+<div style="font-weight: bold; text-decoration: underliems};"><span class="mceNonEditable" th:utext="${summary.problems}">summary.problems</span><br /><br />
+<div style="font-weight: bold; text-decoration: underline;">Ant&eacute;c&eacute;dents m&eacute;dicaux :</div>
+<p><span class="mceNonEditable" th:text="${summary.medicalBackground}">summary.medicalBackground</span></p>
+<div style="font-weight: bold; text-decoration: underline;">Ant&eacute;c&eacute;dents chirurgicaux :</div>
+<p><span class="mceNonEditable" th:text="${summary.surgicalHistory}">summary.surgicalHistory</span></p>
+<div style="font-weight: bold; text-decoration: underline;">Ant&eacute;c&eacute;dents familiaux :</div>
+<p><span class="mceNonEditable" th:utext="${summary.familyHistory}">summary.familyHistory</span></p>
+<div style="font-weight: bold; text-decoration: underline;">Facteurs de risque m&eacute;dical :</div>
+<p><span class="mceNonEditable" th:utext="${summary.medicalRiskfactor}">summary.medicalRiskfactor</span></p>
+<div style="font-weight: bold; text-decoration: underline;">Facteur de risque social :</div>
+<p><span class="mceNonEditable" th:utext="${summary.socialRiskFactors}">summary.socialRiskFactors</span></p>
+<div style="font-weight: bold; text-decoration: underline;">Allergies :</div>
+<p><span class="mceNonEditable" th:utext="${summary.allergy}">summary.allergy</span></p>
+<div style="font-weight: bold; text-decoration: underline;">Intol&eacute;rances</div>
+<p><span class="mceNonEditable" th:utext="${summary.intolerances}">summary.intolerances</span></p>
+<div style="font-weight: bold; text-decoration: underline;">Veuillez trouver ci-dessous le traitement chronique de mon patient :</div>
+<p><span class="mceNonEditable" th:utext="${summary.chronicTreatment}">summary.chronicTreatment</span></p>
+Les examens compl&eacute;mentaires &eacute;ventuels d&eacute;j&agrave; r&eacute;alis&eacute;s dans le cadre de cette pathologie sont annex&eacute;s &agrave; ce rapport.<br />Confraternellement,<hr />
+
+<br/>
+<div class="content" style="margin: 0; padding: 0; font-size: 0.9em;">
+  <!-- quelques conseils pour la transmission des courriers -->
+  <em>
+  Dans le cas o&ugrave; il vous est impossible de me transmettre vos courriers de mani&egrave;re sécuris&eacute;e via le canal de la eHealthbox, veuillez me pr&eacute;venir.
+  </em>
+</div>
+
+
+<!--
+      Signature
+    -->
+<div class="strong" style="font-weight: bold; line-height: 1.2em;"><span>Dr </span> <span class="mceNonEditable" th:text="${doctor.lastName}">doctor.lastName</span> <span class="mceNonEditable" th:text="${doctor.firstName}">doctor.firstName</span> <br />le <span class="mceNonEditable" th:utext="${info.date}">info.date</span></div>
+<!--
+      Fin de Signature
+    --></div>
+
+<!--
+    le pied de page
+  -->
+<div class="foot" style="height: 50px; margin-top: 50px; font-size: 0.4em;">&copy; 2019 Medispring - Avis confr&egrave;re</div>
+<!--
+    Fin du pied de page
+  --></div>
+</div>

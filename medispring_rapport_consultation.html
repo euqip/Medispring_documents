@@ -1,0 +1,34 @@
+<!-- style="font-size: 8pt; color: #008080; left: 72pt; top: 0pt;"-->
+<div class="container" style="font-family: Arial, Helvetica, sans-serif; font-size: 8pt;">
+<div>
+<div class="title" style="text-align: left; color: lightsteelblue; font-size: 0.5em;">Rapport de consultation</div>
+<div style="color: #008080; font-size: 2em; text-align: left;"><span>Dr</span> <span class="mceNonEditable" th:utext="${doctor.lastName}">doctor.lastName</span> <span class="mceNonEditable" th:utext="${doctor.firstName}">doctor.firstName</span><br /><span class="mceNonEditable" th:utext="${doctor.tel}">doctor.tel</span><br /><span class="mceNonEditable" th:utext="${doctor.inami}">doctor.inami</span><br /></div>
+</div>
+<hr />
+<div><span>Au Dr</span> <span class="mceNonEditable" th:utext="${referring.town}">referring.town</span>, le <span class="mceNonEditable" th:utext="${info.date}">info.date</span></div>
+<hr />
+<div>Concerne : <span style="font-weight: bold;"> <span class="mceNonEditable" th:utext="${patient.firstName}">patient.firstName</span> <span class="mceNonEditable" th:utext="${patient.lastName}">patient.lastName</span> </span></div>
+<hr />
+<div><span> Cher confr&egrave;re,</span></div>
+<div><span>J'ai examin&eacute; &agrave; ma consultation, votre patient(e) <span class="mceNonEditable" th:utext="${patient.lastName}">patient.lastName</span> <span class="mceNonEditable" th:utext="${patient.firstName}">patient.firstName</span> <span> n&eacute; le </span> <span class="mceNonEditable" th:utext="${patient.dateOfBirth}">patient.dateOfBirth</span>. </span></div>
+<div style="padding-top: 1.5em;"><span style="text-decoration: underline;">Motif de consultation:</span><br /><span class="mceNonEditable" th:utext="${soaps.motifs}">soaps.motifs</span></div>
+<br />
+<div><span style="text-decoration: underline;">Anamn&egrave;se:</span><br /><span class="mceNonEditable" th:utext="${soaps.subjectif}">soaps.subjectif</span></div>
+<br />
+<div><span style="text-decoration: underline;">Examen clinique:</span><br /><span class="mceNonEditable" th:utext="${soaps.objectif}">soaps.objectif</span></div>
+<br /><!-- biometrie -->
+<div>
+<div class="biometrie"><span style="text-decoration: underline;">Mesures biom&eacute;triques de ce jour:</span><br /><span>TA : <span class="mceNonEditable" th:utext="${soaps.biometrie.sbp}">soaps.biometrie.sbp</span> / <span class="mceNonEditable" th:utext="${soaps.biometrie.dbp}">soaps.biometrie.dbp</span> </span> <br />Pouls : <span class="mceNonEditable" th:utext="${soaps.biometrie.heartrate}">soaps.biometrie.heartrate</span> /min Poids : <span class="mceNonEditable" th:utext="${soaps.biometrie.weight}">soaps.biometrie.weight</span> Kg - Taille : <span class="mceNonEditable" th:utext="${soaps.biometrie.height}">soaps.biometrie.height</span> cm</div>
+</div>
+<br /><!-- Fin biometrie --> <!-- traitement -->
+<div><span style="text-decoration: underline;">Traitement prescrit:</span><br /><span class="mceNonEditable" th:utext="${soaps.medication.treatment}">soaps.medication.treatment</span></div>
+<!-- Fin traitement --> <!-- ITT--> <br />
+<div><span style="text-decoration: underline;">Interruption de travail:</span><br /><span class="mceNonEditable" th:utext="${soaps.itt.startDate}">soaps.itt.startDate</span> - <span class="mceNonEditable" th:utext="${soaps.itt.endDate}">soaps.itt.endDate</span></div>
+<!-- Fin  ITT--> <!-- Note --> <br />
+<div><span style="text-decoration: underline;">Examen(s) compl&eacute;mentaire(s) propos&eacute;(s) : </span>
+<div class="textecompl" style="border: 1px; height: 10em;"><span class="mceNonEditable" th:utext="${soaps.note}">soaps.note</span></div>
+</div>
+<!-- Fin Note--> <br />
+<div><span>Confraternellement,</span></div>
+<div>Dr. <span class="mceNonEditable" th:utext="${doctor.lastName}">doctor.lastName</span> <span class="mceNonEditable" th:utext="${doctor.firstName}">doctor.firstName</span> le <span class="mceNonEditable" th:utext="${info.date}">info.date</span></div>
+</div>
